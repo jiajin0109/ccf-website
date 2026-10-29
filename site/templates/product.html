@@ -13,6 +13,7 @@
     <div class="btns">{{ line_btn(T.button or '加 LINE 免費試用', 'big') }}
       {% if p.ext %}<a class="btn btn-line" href="{{ p.ext }}" target="_blank" rel="noopener">直接開啟產品</a>{% endif %}</div>
     <p class="p-note">{{ T.note }}</p>
+    {% if p.get('notice') %}<p class="p-note">{{ p.notice }}</p>{% endif %}
     {% if p.price and not p.price.startswith('[') %}<p class="p-price">價格：<b>{{ p.price }}</b></p>{% endif %}
   </div>
   <div class="hero-side">
