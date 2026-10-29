@@ -1,0 +1,48 @@
+{% set s = S %}{% from "_ui.html" import line_icon with context %}
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{{ s.seo_title }}{% endblock %}</title>
+<meta name="description" content="{% block desc %}{{ s.seo_desc }}{% endblock %}">
+<meta property="og:title" content="{{ self.title() }}">
+<meta property="og:description" content="{{ self.desc() }}">
+<meta property="og:type" content="website">
+{% if og_image %}<meta property="og:image" content="{{ og_image }}">{% endif %}
+{% if s.logo %}<link rel="icon" href="{{ s.logo|img }}">{% endif %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset('site.css') }}?v=2">
+<style>:root{--accent:{{ s.accent }}}</style>
+<script defer src="{{ asset('config.js') }}"></script>
+<link rel="stylesheet" href="{{ asset('contact.css') }}?v=1">
+<script defer src="{{ asset('contact.js') }}?v=2"></script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="{{ home }}#top">{% if s.logo %}<img src="{{ s.logo|img }}" alt="">{% else %}<svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="7" fill="{{ s.accent }}"/><path d="M8 15 L13 9 L13 13 L20 13 L15 19 L15 15 Z" fill="#111418"/></svg>{% endif %}<span>{{ s.company }}</span></a>
+  <nav class="nav" aria-label="主選單">
+    <a href="{{ home }}#products" class="hide-m">現成產品</a><a href="{{ home }}#custom" class="hide-m">客製開發</a><a href="{{ home }}#why" class="hide-m">為什麼選我們</a>
+    <a href="{{ home }}#process" class="hide-m">合作流程</a><a href="{{ home }}#faq" class="hide-m">常見問題</a>
+    {% if LINE %}<a href="{{ LINE }}" class="pill-btn line-pill" target="_blank" rel="noopener">{{ line_icon(18) }}加 LINE 諮詢</a>
+    {% else %}<a href="{{ home }}#contact" class="pill-btn">免費諮詢</a>{% endif %}
+  </nav>
+</div></header>
+
+{% block content %}{% endblock %}
+
+<footer class="foot-bar"><div class="wrap">
+  <span>© {{ now_year }} {{ s.company }}{% if s.tax_id and s.tax_id != '[統編]' %}・統一編號 {{ s.tax_id }}{% endif %}</span>
+  <span>{% if LINE %}<a href="{{ LINE }}" target="_blank" rel="noopener">LINE：{{ s.line_id }}</a>{% endif %}
+    {%- if s.email and s.email != '[Email]' %}・<a href="mailto:{{ s.email }}">{{ s.email }}</a>{% endif %}
+    {%- if s.phone and s.phone != '[電話]' %}・<a href="tel:{{ s.phone|replace(' ', '')|replace('-', '') }}">{{ s.phone }}</a>{% endif %}
+    {%- if s.address and s.address != '[地址]' %}・{{ s.address }}{% endif %}</span>
+</div></footer>
+
+{% if LINE %}
+<a class="line-float" href="{{ LINE }}" target="_blank" rel="noopener" aria-label="加 LINE 諮詢">{{ line_icon(24) }}<span>加 LINE 諮詢</span></a>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,15 @@
+{% macro line_icon(size=20) -%}
+<svg width="{{ size }}" height="{{ size }}" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11.1c0 4 3.6 7.4 8.4 8l-.5 2.6c-.1.5.4.8.8.5l3.3-2.4c4.6-.7 8-4.1 8-8.1C22 6.6 17.5 3 12 3z"/></svg>
+{%- endmacro %}
+{% macro line_btn(text='加 LINE 免費諮詢', cls='') -%}
+{%- if LINE %}<a class="btn btn-linegreen {{ cls }}" href="{{ LINE }}" target="_blank" rel="noopener">{{ line_icon(20) }}{{ text }}</a>
+{%- else %}<a class="btn btn-accent {{ cls }}" href="{{ home }}#contact">{{ text|replace('加 LINE ', '') }}</a>{% endif -%}
+{%- endmacro %}
+{% macro line_card(title='掃描 QR Code 加 LINE', sub='') -%}
+{%- if LINE %}<div class="line-card">
+  <img src="{{ LINE_QR }}" alt="LINE QR Code：{{ S.line_id }}" width="150" height="150" loading="lazy">
+  <div><b>{{ title }}</b>{% if sub %}<span>{{ sub }}</span>{% endif %}
+    <span class="lid">LINE ID：{{ S.line_id }}</span>
+    <a class="btn btn-linegreen sm" href="{{ LINE }}" target="_blank" rel="noopener">{{ line_icon(18) }}手機點這裡直接加</a></div>
+</div>{%- endif -%}
+{%- endmacro %}

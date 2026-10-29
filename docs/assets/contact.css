@@ -1,0 +1,20 @@
+#contact-status {
+  white-space: pre-line;
+  scroll-margin-top: 110px;
+  scroll-margin-bottom: 120px;
+}
+#contact-status:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+#contact-status.pending {
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #e8efff;
+  color: #173675;
+  font-weight: 700;
+}
+#contact-form button:disabled {
+  cursor: wait;
+  opacity: .75;
+}

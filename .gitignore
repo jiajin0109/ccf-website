@@ -1,0 +1,25 @@
+# Private local records, legacy binary remnants and generated caches.
+/data/
+/webapp/
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+.env*
+# Database copies, signing keys and local credentials must never enter public Git.
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+*.db
+*.db-*
+*.key
+*.pem
+*.p12
+*.pfx
+*.bak
+*.backup
+/backups/
+/.aws/
+credentials.json
+service-account*.json
+
