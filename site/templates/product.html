@@ -1,12 +1,12 @@
 {% extends "site_base.html" %}
 {% from "_ui.html" import line_icon, line_btn, line_card with context %}
-{% block title %}{{ p.name }}｜免費試用・{{ S.company }}{% endblock %}
+{% block title %}{{ p.name }}｜{{ '免費使用' if p.get('free') else '免費試用' }}・{{ S.company }}{% endblock %}
 {% block desc %}{{ p.detail or p.text }}{% endblock %}
-{% block content %}{% set s = S %}
+{% block content %}{% set s = S %}{% set action = '免費使用' if p.get('free') else '試用' %}
 <section class="hero p-hero"><div class="wrap">
   <div class="hero-main">
     <p class="crumb"><a href="{{ home }}#products">← 全部產品</a></p>
-    {% if s.trial_days %}<p class="badge">每款都可以免費試用 {{ s.trial_days }}</p>{% endif %}
+    {% if p.get('free') %}<p class="badge">免費使用</p>{% elif s.trial_days %}<p class="badge">每款都可以免費試用 {{ s.trial_days }}</p>{% endif %}
     <h1>{{ p.name }}</h1>
     <p class="lead">{{ p.detail or p.text }}</p>
     {% if p.tag_list %}<div class="tags dark-tags">{% for t in p.tag_list %}<span>{{ t }}</span>{% endfor %}</div>{% endif %}
@@ -21,7 +21,7 @@
     <div class="trial-box">
       <b>{{ T.title }}</b>
       <ol>{% for st in T.step_list %}<li>{{ st }}</li>{% endfor %}</ol>
-      {{ line_card('掃描加 LINE', '傳「試用 ' ~ p.name ~ '」給我們') }}
+      {{ line_card('掃描加 LINE', '傳「' ~ action ~ ' ' ~ p.name ~ '」給我們') }}
     </div>
   </div>
 </div></section>
@@ -41,7 +41,7 @@
     <ul class="checks">{% for x in p.fit_list %}<li><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#C2410C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11l5 5 9-10"/></svg>{{ x }}</li>{% endfor %}</ul>
   </div>{% endif %}
   <div>
-    <p class="kicker latin">FREE TRIAL</p>
+    <p class="kicker latin">{{ 'FREE ACCESS' if p.get('free') else 'FREE TRIAL' }}</p>
     <h2>{{ T.title }}</h2>
     <p style="margin:0 0 20px;color:var(--muted);font-size:18px">{{ T.text }}</p>
     <ol class="steps light">{% for st in T.step_list %}<li><div class="n latin">{{ loop.index }}</div><p>{{ st }}</p></li>{% endfor %}</ol>
@@ -52,7 +52,7 @@
 <section class="sec"><div class="wrap faq">
   <p class="kicker latin">FAQ</p>
   <h2 style="margin-bottom:24px">常見問題</h2>
-  <details open><summary>試用要錢嗎？會不會自動扣款？</summary><p>{{ T.note }}</p></details>
+  <details open><summary>{{ '美股機會雷達需要付費嗎？' if p.get('free') else '試用要錢嗎？會不會自動扣款？' }}</summary><p>{{ T.note }}</p></details>
   {% for f in faq %}<details><summary>{{ f.q }}</summary><p>{{ f.a }}</p></details>{% endfor %}
   {% if LINE %}<p class="faq-more">還有其他問題？<a href="{{ LINE }}" target="_blank" rel="noopener">LINE 直接問我們 →</a></p>{% endif %}
 </div></section>
@@ -68,7 +68,7 @@
 {% endif %}
 
 <section class="contact"><div class="wrap p-final">
-  <div class="say"><h2>現在就加 LINE，開通免費試用</h2><p>不用填表單，傳「試用 {{ p.name }}」給我們就好。{% if s.reply_time %}通常 <b>{{ s.reply_time }}</b> 內回覆。{% endif %}</p>
+  <div class="say"><h2>{{ '現在就加 LINE，取得免費使用方式' if p.get('free') else '現在就加 LINE，開通免費試用' }}</h2><p>不用填表單，傳「{{ action }} {{ p.name }}」給我們就好。{% if s.reply_time %}通常 <b>{{ s.reply_time }}</b> 內回覆。{% endif %}</p>
     <div class="btns">{{ line_btn(T.button or '加 LINE 免費試用', 'big') }}</div>
     <p class="form-alt" style="margin-top:14px">不方便用 LINE？<a href="{{ home }}#contact">留下電話，我們打給你</a></p></div>
   {{ line_card('掃描 QR Code 加 LINE', '') }}

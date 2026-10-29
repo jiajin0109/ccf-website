@@ -73,7 +73,10 @@ def main():
                        now_year=datetime.now(timezone(timedelta(hours=8))).year,
                        home=home, asset=asset, og_image=og_image, T=c["trial"], faq=c["faq"])
         if index is not None:
-            context.update(p=c["products"][index - 1], others=[p for p in c["products"] if p["i"] != index])
+            selected = c["products"][index - 1]
+            trial = {**c["trial"], **selected.get("trial", {})}
+            trial["step_list"] = [s.strip() for s in trial.get("steps", "").splitlines() if s.strip()]
+            context.update(p=selected, T=trial, others=[p for p in c["products"] if p["i"] != index])
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_text(env.get_template(template).render(**context) + "\n", encoding="utf-8")
 
