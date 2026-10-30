@@ -94,7 +94,7 @@ def main():
         context = dict(C=c, S=s, s=s, LINE=s["line_href"],
                        LINE_QR=asset("uploads/" + s["line_qr"]) if s.get("line_qr") else asset("line_qr.jpg"),
                        now_year=datetime.now(timezone(timedelta(hours=8))).year,
-                       home=home, asset=asset, brand_logo=prefix + "image/ccf-logo_v2.jpg",
+                       home=home, asset=asset, brand_logo=prefix + "image/ccf-logo_v2.png",
                        favicon=prefix + "image/ccf-logo_v2.ico", og_image=og_image, T=c["trial"], faq=c["faq"],
                        lang=lang, zh_href=zh_href, en_href=en_href,
                        canonical=(site_url + "/" + language_dir + page_path) if site_url else "",
