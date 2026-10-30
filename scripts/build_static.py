@@ -57,6 +57,7 @@ def main():
             raise SystemExit("Refusing to remove assets outside docs/.")
         shutil.rmtree(str(OUT / "assets"))
     shutil.copytree(str(SITE / "assets"), str(OUT / "assets"))
+    shutil.copytree(str(SITE / "image"), str(OUT / "image"), dirs_exist_ok=True)
     public_config = {"contactEndpoint": endpoint}
     (OUT / "assets/config.js").write_text("window.CCF_CONFIG = " + json.dumps(public_config) + ";\n", encoding="utf-8")
 
@@ -93,7 +94,8 @@ def main():
         context = dict(C=c, S=s, s=s, LINE=s["line_href"],
                        LINE_QR=asset("uploads/" + s["line_qr"]) if s.get("line_qr") else asset("line_qr.jpg"),
                        now_year=datetime.now(timezone(timedelta(hours=8))).year,
-                       home=home, asset=asset, og_image=og_image, T=c["trial"], faq=c["faq"],
+                       home=home, asset=asset, brand_logo=prefix + "image/ccf-logo.png",
+                       favicon=prefix + "image/CCF_Logo.ico", og_image=og_image, T=c["trial"], faq=c["faq"],
                        lang=lang, zh_href=zh_href, en_href=en_href,
                        canonical=(site_url + "/" + language_dir + page_path) if site_url else "",
                        zh_alternate=(site_url + "/" + page_path) if site_url else zh_href,
