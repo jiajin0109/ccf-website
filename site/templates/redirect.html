@@ -1,0 +1,14 @@
+{% extends "site_base.html" %}
+{% block title %}{{ p.name }} | {{ S.company }}{% endblock %}
+{% block desc %}{{ p.text }}{% endblock %}
+{% block extra_head %}
+<meta http-equiv="refresh" content="0;url={{ p.ext }}">
+<script>window.location.replace({{ p.ext|tojson }});</script>
+{% endblock %}
+{% block content %}
+<section class="hero"><div class="wrap"><div class="hero-main">
+  <h1>{{ p.name }}</h1>
+  <p class="lead">{{ tr('正在前往美股機會雷達；若未自動跳轉，請點下方按鈕。', 'Opening US Stock Opportunity Radar. If you are not redirected, use the button below.') }}</p>
+  <div class="btns"><a class="btn btn-accent" href="{{ p.ext }}">{{ tr('免費使用', 'Open free tool') }} →</a></div>
+</div></div></section>
+{% endblock %}

@@ -81,6 +81,10 @@ def main():
             p.update(i=i, href=prefix + language_dir + "p/{}/index.html".format(i), ext=safe_url(p.get("link")),
                      tag_list=[s.strip() for s in re.split(r"[,，、]", p.get("tags", "")) if s.strip()],
                      fit_list=[s.strip() for s in p.get("fit", "").splitlines() if s.strip()])
+            if p.get("direct_link"):
+                if urlparse(p["ext"]).scheme not in ("https", "http") or not urlparse(p["ext"]).netloc:
+                    raise ValueError("Direct product links must be full HTTP(S) URLs.")
+                p["href"] = p["ext"]
             p["feature_list"] = []
             for line in p.get("features", "").splitlines():
                 if line.strip():
@@ -106,6 +110,9 @@ def main():
             trial = {**c["trial"], **selected.get("trial", {})}
             trial["step_list"] = [s.strip() for s in trial.get("steps", "").splitlines() if s.strip()]
             context.update(p=selected, T=trial, others=[p for p in c["products"] if p["i"] != index])
+            if selected.get("direct_link"):
+                template = "redirect.html"
+                context["canonical"] = selected["ext"]
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_text(env.get_template(template).render(**context) + "\n", encoding="utf-8")
 
