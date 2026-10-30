@@ -3,7 +3,8 @@
 官網已轉成 HTML／CSS／JavaScript。首頁、產品頁、版型與原本樣式沿用；瀏覽網站不需要 Python、Flask、資料庫或管理後台。
 
 - `docs/`：可直接發佈到 GitHub Pages 的完成檔案。
-- `site/content.json`：網站文案、公司資訊、產品、FAQ。之後改這份檔案。
+- `site/content.json`：中文版文案、公司資訊、產品、FAQ。
+- `site/content.en.json`：英文版文案；未重複的共用設定由中文版繼承。兩種語言的產品與列表順序需保持一致。
 - `site/templates/`：原本的公開頁面版型，改成靜態連結。
 - `site/assets/`：樣式、圖片、表單 JavaScript。
 - `site/config.json`：Formspree 表單接收網址與正式網站網址，**只放公開設定**。
@@ -21,6 +22,12 @@ python -m http.server 8088 --directory docs
 開啟 `http://localhost:8088`，也可以雙擊 `preview-static.bat` 預覽。更新時一起提交 `site/` 和重新產生的 `docs/`。Python 只用於本機產生 HTML，不用部署到主機。也可以直接改 `docs/`，但下次建置會被 `site/` 的內容覆蓋。
 
 使用 VS Code Live Server 時，對 **`docs/index.html`** 按右鍵 → Open with Live Server。`site/templates/` 是建置用範本，不能直接當網站開啟。
+
+中文版維持原網址；英文版入口是 `docs/en/index.html`，正式網址為 `https://ccf-software.com/en/`。每頁導覽列的「中文／EN」可切換至同一頁的另一個語言版本，包含四個產品頁。兩版顯示相同的新台幣價格，英文不換算美元。修改文案或價格時，請同步更新兩份內容檔後重新建置。
+
+## Google Analytics
+
+已在共用版型加入 GA4 `G-NL9WDQ47C9`，中英文共十個頁面都載入一次 Google tag。程式不額外將表單姓名、電話／LINE ID 或需求內容傳給 GA。部署更新後可在 GA 的即時報表確認瀏覽資料；本機檢查只驗證追蹤碼存在，不代表已驗證 GA 帳號收件。
 
 ## GitHub Pages
 

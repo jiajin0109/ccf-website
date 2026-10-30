@@ -19,8 +19,24 @@ def safe_url(value):
     return value if re.match(r"^(https?://|mailto:|tel:|#|/)", value, re.I) and not value.startswith("//") else ""
 
 
+def translate_content(base, translated):
+    if isinstance(translated, dict):
+        result = copy.deepcopy(base)
+        for key, value in translated.items():
+            if key not in base:
+                raise ValueError("Unknown English content field: " + key)
+            result[key] = translate_content(base[key], value)
+        return result
+    if isinstance(translated, list):
+        if len(base) != len(translated):
+            raise ValueError("Chinese and English lists must have matching entries.")
+        return [translate_content(a, b) for a, b in zip(base, translated)]
+    return translated
+
+
 def main():
     content = json.loads((SITE / "content.json").read_text(encoding="utf-8"))
+    english = translate_content(content, json.loads((SITE / "content.en.json").read_text(encoding="utf-8")))
     config = json.loads((SITE / "config.json").read_text(encoding="utf-8"))
     endpoint = config.get("contactEndpoint", "").strip()
     if endpoint and not re.fullmatch(r"https://formspree\.io/f/[A-Za-z0-9]+", endpoint):
@@ -34,6 +50,8 @@ def main():
     OUT.mkdir(exist_ok=True)
     for path in OUT.glob("p/*/index.html"):
         path.unlink()
+    for path in OUT.glob("en/p/*/index.html"):
+        path.unlink()
     if (OUT / "assets").exists():
         if (OUT / "assets").is_symlink() or (OUT / "assets").resolve().parent != OUT.resolve():
             raise SystemExit("Refusing to remove assets outside docs/.")
@@ -42,9 +60,13 @@ def main():
     public_config = {"contactEndpoint": endpoint}
     (OUT / "assets/config.js").write_text("window.CCF_CONFIG = " + json.dumps(public_config) + ";\n", encoding="utf-8")
 
-    def render(template, destination, depth, index=None):
+    def render(template, destination, depth, index=None, lang="zh-Hant"):
         prefix = "../" * depth
-        home = prefix + "index.html"
+        language_dir = "en/" if lang == "en" else ""
+        home = prefix + language_dir + "index.html"
+        page_path = "p/{}/index.html".format(index) if index is not None else "index.html"
+        zh_href = prefix + page_path
+        en_href = prefix + "en/" + page_path
 
         def asset(name):
             path = OUT / "assets" / name
@@ -53,9 +75,9 @@ def main():
             return prefix + "assets/" + name
 
         env.filters["img"] = lambda name: asset("uploads/" + name) if name else ""
-        c = copy.deepcopy(content)
+        c = copy.deepcopy(english if lang == "en" else content)
         for i, p in enumerate(c["products"], 1):
-            p.update(i=i, href=prefix + "p/{}/index.html".format(i), ext=safe_url(p.get("link")),
+            p.update(i=i, href=prefix + language_dir + "p/{}/index.html".format(i), ext=safe_url(p.get("link")),
                      tag_list=[s.strip() for s in re.split(r"[,，、]", p.get("tags", "")) if s.strip()],
                      fit_list=[s.strip() for s in p.get("fit", "").splitlines() if s.strip()])
             p["feature_list"] = []
@@ -71,7 +93,12 @@ def main():
         context = dict(C=c, S=s, s=s, LINE=s["line_href"],
                        LINE_QR=asset("uploads/" + s["line_qr"]) if s.get("line_qr") else asset("line_qr.jpg"),
                        now_year=datetime.now(timezone(timedelta(hours=8))).year,
-                       home=home, asset=asset, og_image=og_image, T=c["trial"], faq=c["faq"])
+                       home=home, asset=asset, og_image=og_image, T=c["trial"], faq=c["faq"],
+                       lang=lang, zh_href=zh_href, en_href=en_href,
+                       canonical=(site_url + "/" + language_dir + page_path) if site_url else "",
+                       zh_alternate=(site_url + "/" + page_path) if site_url else zh_href,
+                       en_alternate=(site_url + "/en/" + page_path) if site_url else en_href,
+                       tr=lambda zh, en: en if lang == "en" else zh)
         if index is not None:
             selected = c["products"][index - 1]
             trial = {**c["trial"], **selected.get("trial", {})}
@@ -83,9 +110,12 @@ def main():
     render("index.html", OUT / "index.html", 0)
     for i in range(1, len(content["products"]) + 1):
         render("product.html", OUT / "p" / str(i) / "index.html", 2, i)
+    render("index.html", OUT / "en/index.html", 1, lang="en")
+    for i in range(1, len(content["products"]) + 1):
+        render("product.html", OUT / "en/p" / str(i) / "index.html", 3, i, lang="en")
     (OUT / ".nojekyll").touch()
     (OUT / "robots.txt").write_text("User-agent: *\nAllow: /\n", encoding="utf-8")
-    print("Built docs/: homepage + {} product pages.".format(len(content["products"])))
+    print("Built docs/: Chinese and English homepages + {} product pages.".format(2 * len(content["products"])))
     if not endpoint:
         print("Formspree endpoint is not configured. Form shows a truthful error until configured.")
 

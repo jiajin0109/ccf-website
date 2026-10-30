@@ -7,7 +7,7 @@
     <h1>{{ h.title1 }}{% if h.title2 %}<br>{{ h.title2 }}{% endif %}{% if h.title_hl %}<br><span class="hl">{{ h.title_hl }}</span>{% endif %}</h1>
     <p class="lead">{{ h.text }}</p>
     <div class="btns"><a class="btn btn-accent" href="#products">{{ h.btn1 }}</a>{% if LINE %}<a class="btn btn-linegreen" href="{{ LINE }}" target="_blank" rel="noopener">{{ line_icon(20) }}{{ h.btn2 }}</a>{% else %}<a class="btn btn-line" href="#contact">{{ h.btn2 }}</a>{% endif %}</div>
-    {% if LINE %}<p class="hero-line">LINE 直接找開發的人：<a href="{{ LINE }}" target="_blank" rel="noopener">{{ s.line_id }}</a></p>{% endif %}
+    {% if LINE %}<p class="hero-line">{{ tr('LINE 直接找開發的人：', 'Talk directly to the developers on LINE: ') }}<a href="{{ LINE }}" target="_blank" rel="noopener">{{ s.line_id }}</a></p>{% endif %}
   </div>
   <div class="hero-side">
     {% if h.image %}<img src="{{ h.image|img }}" alt="">
@@ -26,13 +26,13 @@
       <h3><a class="plain" href="{{ p.href }}">{{ p.name }}</a></h3>
       <p>{{ p.text }}</p>
       {% if p.tag_list %}<div class="tags">{% for t in p.tag_list %}<span>{{ t }}</span>{% endfor %}</div>{% endif %}
-      <div class="foot"><b>{{ p.price }}</b><a class="go" href="{{ p.href }}">{{ p.button or '了解更多' }} →</a></div>
+      <div class="foot"><b>{{ p.price }}</b><a class="go" href="{{ p.href }}">{{ p.button or tr('了解更多', 'Learn more') }} →</a></div>
     </article>
     {% endfor %}
     <article class="card inv">
-      <h3>更多產品陸續上架</h3>
-      <p>找不到剛好合用的？告訴我們你的工作流程，我們幫你做一套。</p>
-      <div class="btns" style="margin-top:8px;gap:10px"><a class="btn btn-accent sm" href="#custom">了解客製開發</a>{{ line_btn('LINE 直接問', 'sm') }}</div>
+      <h3>{{ tr('更多產品陸續上架', 'More products on the way') }}</h3>
+      <p>{{ tr('找不到剛好合用的？告訴我們你的工作流程，我們幫你做一套。', 'Need something different? Tell us how you work and we can build a tool around it.') }}</p>
+      <div class="btns" style="margin-top:8px;gap:10px"><a class="btn btn-accent sm" href="#custom">{{ tr('了解客製開發', 'Custom development') }}</a>{{ line_btn(tr('LINE 直接問', 'Ask us on LINE'), 'sm') }}</div>
     </article>
   </div>
 </div></section>
@@ -43,7 +43,7 @@
     <h2>{{ C.custom.title }}</h2>
     <p style="margin:0;color:var(--muted);font-size:18px">{{ C.custom.text }}</p>
     <ul class="checks">{% for x in C.custom['items'] %}<li><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#C2410C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11l5 5 9-10"/></svg>{{ x }}</li>{% endfor %}</ul>
-    <div class="btns" style="margin-top:28px">{{ line_btn('加 LINE，免費聊你的需求') }}</div>
+    <div class="btns" style="margin-top:28px">{{ line_btn(tr('加 LINE，免費聊你的需求', 'Discuss your needs on LINE')) }}</div>
   </div>
   <div class="tbl"><table>
     <caption>{{ C.custom.table_title }}</caption>
@@ -62,30 +62,30 @@
   <p class="kicker latin">{{ C.steps_head.kicker }}</p>
   <h2 style="margin-bottom:40px">{{ C.steps_head.title }}</h2>
   <ol class="steps">{% for st in C.steps %}<li><div class="n latin">{{ loop.index }}</div><h3>{{ st.title }}</h3><p>{{ st.text }}</p></li>{% endfor %}</ol>
-  <div class="cta-row">{{ line_btn('第一步：加 LINE 聊需求') }}<span>免費諮詢，不滿意不收費</span></div>
+  <div class="cta-row">{{ line_btn(tr('第一步：加 LINE 聊需求', 'Start with a chat on LINE')) }}<span>{{ tr('免費諮詢，不滿意不收費', 'Free initial consultation, with no obligation') }}</span></div>
 </div></section>
 
 <section id="faq" class="sec"><div class="wrap faq">
   <p class="kicker latin">{{ C.faq_head.kicker }}</p>
   <h2 style="margin-bottom:32px">{{ C.faq_head.title }}</h2>
   {% for f in C.faq %}<details {{ 'open' if loop.first }}><summary>{{ f.q }}</summary><p>{{ f.a }}</p></details>{% endfor %}
-  {% if LINE %}<p class="faq-more">還有其他問題？<a href="{{ LINE }}" target="_blank" rel="noopener">LINE 直接問我們 →</a></p>{% endif %}
+  {% if LINE %}<p class="faq-more">{{ tr('還有其他問題？', 'Have another question? ') }}<a href="{{ LINE }}" target="_blank" rel="noopener">{{ tr('LINE 直接問我們 →', 'Ask us on LINE →') }}</a></p>{% endif %}
 </div></section>
 
 <section id="contact" class="contact"><div class="wrap">
   <div class="say">
     <h2>{{ C.contact.title }}</h2>
     <p>{{ C.contact.text }}</p>
-    {% if s.reply_time %}<p>我們會在 <b>{{ s.reply_time }}</b> 內回覆。</p>{% endif %}
-    {{ line_card('最快的方式：加 LINE', '傳訊息給我們，直接跟開發的人聊') }}
+    {% if s.reply_time %}<p>{{ tr('我們會在 ', 'We will reply within ') }}<b>{{ s.reply_time }}</b>{{ tr(' 內回覆。', '.') }}</p>{% endif %}
+    {{ line_card(tr('最快的方式：加 LINE', 'Reach us faster on LINE'), tr('傳訊息給我們，直接跟開發的人聊', 'Message the developers directly')) }}
   </div>
   <form class="form" id="contact-form" method="post" action="#contact" data-thanks="{{ C.contact.thanks }}">
-    <noscript><div class="flash">請開啟 JavaScript 送出諮詢，或直接加 LINE 聯絡我們。</div></noscript>
-    <label>怎麼稱呼你<input type="text" name="name" maxlength="60" autocomplete="name"></label>
-    <label>電話或 LINE ID<input type="text" name="contact" maxlength="100" required autocomplete="tel"></label>
-    <label>想做什麼？<textarea name="need" rows="3" maxlength="2000" placeholder="{{ C.contact.placeholder }}"></textarea></label>
-    <label class="hp" aria-hidden="true">網站<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
-    <p class="form-alt">不想加 LINE？留下電話也可以，我們打給你。</p>
+    <noscript><div class="flash">{{ tr('請開啟 JavaScript 送出諮詢，或直接加 LINE 聯絡我們。', 'Enable JavaScript to send an inquiry, or contact us on LINE.') }}</div></noscript>
+    <label>{{ tr('怎麼稱呼你', 'Your name') }}<input type="text" name="name" maxlength="60" autocomplete="name"></label>
+    <label>{{ tr('電話或 LINE ID', 'Phone number or LINE ID') }}<input type="text" name="contact" maxlength="100" required autocomplete="tel"></label>
+    <label>{{ tr('想做什麼？', 'What would you like to build?') }}<textarea name="need" rows="3" maxlength="2000" placeholder="{{ C.contact.placeholder }}"></textarea></label>
+    <label class="hp" aria-hidden="true">{{ tr('網站', 'Website') }}<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+    <p class="form-alt">{{ tr('不想加 LINE？留下電話也可以，我們打給你。', 'Prefer a call? Leave your phone number and we will contact you.') }}</p>
     <button class="btn btn-accent" type="submit">{{ C.contact.button }}</button>
     <div id="contact-status" role="status" aria-live="polite" aria-atomic="true" tabindex="-1" hidden></div>
   </form>

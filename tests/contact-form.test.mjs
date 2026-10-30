@@ -5,7 +5,7 @@ import vm from "node:vm";
 
 const source = await readFile(new URL("../site/assets/contact.js", import.meta.url), "utf8");
 
-function setup(endpoint, fetch) {
+function setup(endpoint, fetch, lang = "zh-Hant") {
   let submit;
   let resets = 0;
   let focused = false;
@@ -15,10 +15,10 @@ function setup(endpoint, fetch) {
     focus: () => { focused = true; },
     scrollIntoView: () => { scrolled = true; },
   };
-  const button = { textContent: "送出，免費諮詢", disabled: false };
+  const button = { textContent: lang === "en" ? "Send a free inquiry" : "送出，免費諮詢", disabled: false };
   const values = new Map([["name", "測試"], ["contact", "@buyer"], ["need", "需求"], ["_gotcha", ""]]);
   const form = {
-    dataset: { thanks: "已收到" },
+    dataset: { thanks: lang === "en" ? "We will get back to you soon." : "已收到" },
     querySelector: () => button,
     addEventListener: (_, handler) => { submit = handler; },
     reportValidity: () => true,
@@ -26,7 +26,7 @@ function setup(endpoint, fetch) {
     reset: () => { resets++; },
   };
   vm.runInNewContext(source, {
-    document: { getElementById: id => id === "contact-form" ? form : status },
+    document: { documentElement: { lang }, getElementById: id => id === "contact-form" ? form : status },
     window: { CCF_CONFIG: { contactEndpoint: endpoint } },
     FormData: class { get(key) { return values.get(key); } },
     fetch, setTimeout, clearTimeout, AbortController, TypeError,
@@ -120,4 +120,31 @@ test("successful HTTP JSON response is accepted without requiring a custom worke
   await page.submit();
   assert.equal(page.resets(), 1);
   assert.equal(page.status.className, "ok");
+});
+
+test("English inquiries use translated feedback and identify their language", async () => {
+  let finish;
+  const page = setup("https://formspree.io/f/testform", async (_, options) => {
+    const payload = JSON.parse(options.body);
+    assert.equal(payload.subject, "CCF website | New inquiry");
+    assert.equal(payload.language, "English");
+    await new Promise(resolve => { finish = resolve; });
+    return { ok: true, json: async () => ({ ok: true }) };
+  }, "en");
+  const submitted = page.submit();
+  assert.equal(page.button.textContent, "Sending…");
+  assert.match(page.status.textContent, /Sending your inquiry/);
+  finish();
+  await submitted;
+  assert.match(page.status.textContent, /Your inquiry has been sent/);
+  assert.equal(page.button.textContent, "Sent ✓");
+  assert.equal(page.resets(), 1);
+});
+
+test("English network errors preserve the form and show English feedback", async () => {
+  const page = setup("https://formspree.io/f/testform", async () => { throw new TypeError("network"); }, "en");
+  await page.submit();
+  assert.match(page.status.textContent, /Unable to connect/);
+  assert.equal(page.button.textContent, "Send a free inquiry");
+  assert.equal(page.resets(), 0);
 });

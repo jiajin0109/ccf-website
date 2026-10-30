@@ -1,0 +1,134 @@
+{
+  "settings": {
+    "company": "CCF Software Studio",
+    "trial_days": "3 days",
+    "reply_time": "1 business day",
+    "seo_title": "CCF Software Studio | Practical software, custom development & ongoing support",
+    "seo_desc": "Ready-to-use productivity tools and affordable custom software. Explore our products, try them first, and work directly with the developers."
+  },
+  "hero": {
+    "badge": "A new approach to software · AI-assisted development",
+    "title1": "Great software.",
+    "title2": "Within reach.",
+    "title_hl": "For every business.",
+    "text": "We build useful software faster and at a lower cost, then stay with you after launch. Start with a ready-to-use product or have a tool built around the way you work.",
+    "btn1": "Explore products",
+    "btn2": "Discuss a custom project"
+  },
+  "pillars": [
+    {"title": "Fast delivery", "text": "See a working version in weeks and decide what comes next."},
+    {"title": "Affordable", "text": "A more efficient development process means a lower price for you."},
+    {"title": "Ongoing support", "text": "Feature changes, maintenance and updates: we stay available after delivery."}
+  ],
+  "products_head": {
+    "title": "Practical tools, ready to use",
+    "text": "From cloud management and market research to desktop automation, choose the tool that fits your workflow. Contact us on LINE to ask about a free trial."
+  },
+  "products": [
+    {
+      "name": "Cloud Attendance Calendar",
+      "text": "Clock-ins, leave, overtime and assigned tasks in one calendar. Includes GPS or workplace-network clock-in, overtime estimates and support for seven languages.",
+      "tags": "Mobile-friendly,7 languages,Taiwan overtime calculations",
+      "price": "NT$ 250/month · NT$ 2,000/year",
+      "button": "Free trial",
+      "detail": "Employees clock in from their phones, while leave, overtime and assigned tasks appear in a shared calendar. Managers can see who is working and review attendance and overtime calculations at month-end.",
+      "features": "Mobile clock-in | Use GPS or the workplace network without buying a clock-in terminal\nOnline requests | Employees submit leave and overtime requests on their phones; approved requests appear in the calendar\nOvertime estimates | Calculate weekday and rest-day overtime using Taiwan labor rules\nAssigned tasks | See who is responsible for each task and when it is due\nSeven languages | Supports Chinese, English, Vietnamese, Indonesian, Thai, Japanese and more\nApp-like access | Add the website to your phone's home screen without installing a separate app",
+      "fit": "Shops and factories with shifts, field staff or part-time employees\nTeams with staff who speak different languages\nBusinesses replacing paper attendance sheets and leave forms"
+    },
+    {
+      "name": "Cloud Inventory Management",
+      "text": "Manage purchasing, sales, stocktaking and inventory in one place. Track costs and gross profit by product and sales channel.",
+      "tags": "Multiple sales channels,Gross profit analysis",
+      "price": "NT$ 250/month · NT$ 2,000/year",
+      "button": "Free trial",
+      "detail": "Bring purchasing, sales, stocktaking and inventory into one system. Calculate costs and gross profit for each transaction, then compare performance across products and sales channels.",
+      "features": "Multiple sales channels | Keep Shopee, your website and physical-store records separate or review them together\nAutomatic stock updates | Purchases and sales update inventory without daily spreadsheet edits\nCosts and gross profit | See how much each product and channel earns\nStocktaking | Adjust inventory using actual stock counts\nExport reports | Export to Excel for reconciliation and accounting",
+      "fit": "Shopee and other online sellers\nSmall businesses with both an online shop and a physical store\nTeams struggling to reconcile spreadsheet inventory"
+    },
+    {
+      "name": "US Stock Opportunity Radar",
+      "text": "Explore six research lists and compare US companies by valuation, financial quality, growth and momentum. Sector filters and stock details help narrow your research.",
+      "tags": "6 research lists,Peer-group scores,Post-market updates",
+      "price": "Free",
+      "button": "Free access",
+      "trial": {
+        "title": "Add us on LINE for free access",
+        "text": "US Stock Opportunity Radar is free to use. Message us on LINE for access details and instructions.",
+        "steps": "Add us on LINE\nSend “Free access — US Stock Opportunity Radar”\nReceive access details and instructions",
+        "button": "Get free access on LINE",
+        "note": "US Stock Opportunity Radar is free to use, with no three-day trial limit or automatic charges."
+      },
+      "detail": "Spend less time looking up financial figures one stock at a time. The radar organizes price and fundamental data into six lists, with industry-relative scores for valuation, quality, growth and momentum. Filter the lists, then open a stock page to review its selection reasons, financial metrics and one-year price history.",
+      "features": "Six research lists | Explore low-P/E opportunities, composite scores, quality pullbacks, analyst sentiment, stable dividends and momentum\nIndustry-relative scores | Compare valuation, financial quality, growth and momentum within the same sector, alongside a composite score\nSector and market-cap filters | Narrow your research by sector and minimum market capitalization\nStock details and selection reasons | Review P/E, cash flow, revenue growth, analyst data and why a stock appears on a list\nPrice history and performance | View one-year trends, 52-week ranges and returns over several periods\nScheduled post-market updates | Run daily updates while the service is active, or start an update manually and check the data timestamp",
+      "fit": "People building a US stock research list using consistent criteria\nResearchers comparing valuation and financial quality within an industry\nPeople who want fundamentals, price trends and selection reasons in one place",
+      "notice": "Data is not real-time. Completeness and update times depend on the data sources. Scores and lists are research and screening tools, not investment advice, and do not guarantee returns."
+    },
+    {
+      "name": "Shopee Auto Bump",
+      "text": "Choose products and their order in your desktop browser, then automate product bumping. Scheduling, manual runs and activity logs reduce repetitive Seller Centre tasks.",
+      "tags": "Desktop browser extension,Product rotation,Scheduled bumping",
+      "price": "NT$ 1,500 one-time purchase",
+      "button": "Free trial",
+      "detail": "Let a browser extension handle repeated product-bumping tasks. Sign in to Shopee Seller Centre, select your products, arrange their order and turn on automation. The extension schedules runs based on available slots and previous bump times, with the next run, daily totals and activity logs visible at a glance.",
+      "features": "Product selection and ordering | Search for products, select them and adjust their order\nRotation and slot filling | Work through the selected list and rotate products when it exceeds the batch size\nScheduling and wait settings | Track bump times and set intervals for the next run\nManual controls | Run once to check the result, or use the start/pause switch\nStatus and activity logs | Review the next run, last run, daily totals and success or error messages\nLicense activation and trial | Activate with a license key and ask about a three-day free trial; contact us for device-binding changes",
+      "fit": "Shopee sellers who regularly bump products\nStores that want to rotate a larger product list in a set order\nUsers who can keep their computer awake, browser open and Seller Centre signed in",
+      "notice": "Requires desktop Chrome or Edge, extension installation and a computer that stays awake with the browser open. This is not an official Shopee service. Automated actions may lead to warnings or account restrictions; assess the risks and follow platform rules. Search rankings and sales are not guaranteed."
+    }
+  ],
+  "trial": {
+    "title": "Add us on LINE to start your free trial",
+    "text": "No form or credit card required. Add us on LINE and send “Trial” with the product name. We will help you get started.",
+    "steps": "Add us on LINE\nSend “Trial” and the product name\nWe help activate your trial and provide setup instructions",
+    "button": "Start a free trial on LINE",
+    "note": "Trials are free, with no automatic charges. Ask the developers directly on LINE if you need help."
+  },
+  "custom": {
+    "title": "Custom software within reach",
+    "text": "A dedicated system does not have to mean a large budget and months of waiting. We use AI-assisted development to deliver practical software faster and at a lower cost.",
+    "list": "Internal operations: attendance, scheduling, inventory, members and accounting\nCustomer services: bookings, orders, membership portals and apps\nAutomation: reports, data processing, notifications and repetitive tasks\nData analysis: dashboards, backtesting and forecasting tools",
+    "table_title": "Traditional outsourcing vs. CCF",
+    "col_a": "Traditional outsourcing",
+    "col_b": "CCF"
+  },
+  "compare": [
+    {"item": "Price", "a": "High quotes can be difficult for small businesses", "b": "Start with a scope that fits your budget"},
+    {"item": "First working version", "a": "Months of specifications and waiting", "b": "A usable version early in the process"},
+    {"item": "Changing requirements", "a": "Additional charges for each change", "b": "Iterative adjustments; minor changes included"},
+    {"item": "After delivery", "a": "Support may end with the warranty", "b": "Ongoing maintenance options"},
+    {"item": "Communication", "a": "Meetings, documents and multiple intermediaries", "b": "Talk directly to the developers on LINE"}
+  ],
+  "why_head": {"title": "More than speed and price"},
+  "why": [
+    {"title": "Try before you pay", "text": "Try our products first. For custom projects, see a working version before deciding on the next stage."},
+    {"title": "Tools for the way you work", "text": "Choose from web tools for phones and computers or desktop browser extensions, according to each product's requirements."},
+    {"title": "Support for multilingual teams", "text": "Cloud Attendance Calendar supports Chinese, English, Vietnamese, Indonesian, Thai, Japanese and more, helping staff use a familiar language."},
+    {"title": "Built for Taiwan's workflows", "text": "Attendance, overtime calculations and report formats are designed around local business needs."},
+    {"title": "Separate business data", "text": "Cloud products separate company data and use HTTPS, backups, protected accounts and activity records."},
+    {"title": "Keep control of your data", "text": "Monthly subscriptions can be stopped and data exported to Excel. Source-code handover can be discussed for custom projects."},
+    {"title": "Continued updates", "text": "We keep improving products with new features and regulatory updates, without a separate upgrade fee."},
+    {"title": "Your brand", "text": "Custom projects can use your company name, logo and domain, so the system feels like your own."}
+  ],
+  "steps_head": {"title": "Custom development in five steps"},
+  "steps": [
+    {"title": "Discuss your needs", "text": "Tell us on LINE or by phone how you work and what gets in the way."},
+    {"title": "Get a clear quote", "text": "Agree on features, price and delivery time."},
+    {"title": "Try the first version", "text": "Use a working version and tell us what needs adjusting."},
+    {"title": "Refine and launch", "text": "Make it practical for daily use, then help your team get started."},
+    {"title": "Stay supported", "text": "Contact us directly for backups, updates and additional features."}
+  ],
+  "faq_head": {"title": "Frequently asked questions"},
+  "faq": [
+    {"q": "Does a lower price mean lower quality?", "a": "Savings come from our development process. AI handles repetitive coding tasks, while we focus on requirements, testing and quality checks before delivery."},
+    {"q": "How can you deliver quickly?", "a": "We reuse proven components from our existing products and use AI-assisted development to get a working version ready sooner."},
+    {"q": "Can I request changes after launch?", "a": "Ongoing adjustments are available through a maintenance plan. Contact us on LINE for minor changes; larger features are quoted for your approval first."},
+    {"q": "Where is the data stored?", "a": "Cloud products use servers with encrypted connections, separate company data and regular backups. Custom projects can also run on your own server or cloud account."},
+    {"q": "Can I try a product first?", "a": "Yes. Paid products offer a free trial, and US Stock Opportunity Radar is free to use. For custom projects, we can show a demonstration after the initial discussion."}
+  ],
+  "contact": {
+    "title": "Your idea. Let's build it.",
+    "text": "Leave your contact details and we will get back to you. You can also reach us directly on LINE.",
+    "placeholder": "For example: mobile attendance tracking and automatic payroll calculations",
+    "button": "Send a free inquiry",
+    "thanks": "We have received your inquiry and will get back to you soon."
+  }
+}
