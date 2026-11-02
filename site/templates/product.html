@@ -52,7 +52,7 @@
 <section class="sec"><div class="wrap faq">
   <p class="kicker latin">FAQ</p>
   <h2 style="margin-bottom:24px">{{ tr('常見問題', 'Frequently asked questions') }}</h2>
-  <details open><summary>{{ tr('美股機會雷達需要付費嗎？', 'Is US Stock Opportunity Radar free?') if p.get('free') else tr('試用要錢嗎？會不會自動扣款？', 'Is the trial free? Will I be charged automatically?') }}</summary><p>{{ T.note }}</p></details>
+  <details open><summary>{{ (p.name ~ tr('需要付費嗎？', ': is it free?')) if p.get('free') else tr('試用要錢嗎？會不會自動扣款？', 'Is the trial free? Will I be charged automatically?') }}</summary><p>{{ T.note }}</p></details>
   {% for f in faq %}<details><summary>{{ f.q }}</summary><p>{{ f.a }}</p></details>{% endfor %}
   {% if LINE %}<p class="faq-more">{{ tr('還有其他問題？', 'Have another question? ') }}<a href="{{ LINE }}" target="_blank" rel="noopener">{{ tr('LINE 直接問我們 →', 'Ask us on LINE →') }}</a></p>{% endif %}
 </div></section>

@@ -16,9 +16,18 @@
     "btn2": "Discuss a custom project"
   },
   "pillars": [
-    {"title": "Fast delivery", "text": "See a working version in weeks and decide what comes next."},
-    {"title": "Affordable", "text": "A more efficient development process means a lower price for you."},
-    {"title": "Ongoing support", "text": "Feature changes, maintenance and updates: we stay available after delivery."}
+    {
+      "title": "Fast delivery",
+      "text": "See a working version in weeks and decide what comes next."
+    },
+    {
+      "title": "Affordable",
+      "text": "A more efficient development process means a lower price for you."
+    },
+    {
+      "title": "Ongoing support",
+      "text": "Feature changes, maintenance and updates: we stay available after delivery."
+    }
   ],
   "products_head": {
     "title": "Practical tools, ready to use",
@@ -61,7 +70,8 @@
       "detail": "Spend less time looking up financial figures one stock at a time. The radar organizes price and fundamental data into six lists, with industry-relative scores for valuation, quality, growth and momentum. Filter the lists, then open a stock page to review its selection reasons, financial metrics and one-year price history.",
       "features": "Six research lists | Explore low-P/E opportunities, composite scores, quality pullbacks, analyst sentiment, stable dividends and momentum\nIndustry-relative scores | Compare valuation, financial quality, growth and momentum within the same sector, alongside a composite score\nSector and market-cap filters | Narrow your research by sector and minimum market capitalization\nStock details and selection reasons | Review P/E, cash flow, revenue growth, analyst data and why a stock appears on a list\nPrice history and performance | View one-year trends, 52-week ranges and returns over several periods\nScheduled post-market updates | Run daily updates while the service is active, or start an update manually and check the data timestamp",
       "fit": "People building a US stock research list using consistent criteria\nResearchers comparing valuation and financial quality within an industry\nPeople who want fundamentals, price trends and selection reasons in one place",
-      "notice": "Data is not real-time. Completeness and update times depend on the data sources. Scores and lists are research and screening tools, not investment advice, and do not guarantee returns."
+      "notice": "Data is not real-time. Completeness and update times depend on the data sources. Scores and lists are research and screening tools, not investment advice, and do not guarantee returns.",
+      "link": "https://ccf-software.com/us_stock/"
     },
     {
       "name": "Shopee Auto Bump",
@@ -73,6 +83,26 @@
       "features": "Product selection and ordering | Search for products, select them and adjust their order\nRotation and slot filling | Work through the selected list and rotate products when it exceeds the batch size\nScheduling and wait settings | Track bump times and set intervals for the next run\nManual controls | Run once to check the result, or use the start/pause switch\nStatus and activity logs | Review the next run, last run, daily totals and success or error messages\nLicense activation and trial | Activate with a license key and ask about a three-day free trial; contact us for device-binding changes",
       "fit": "Shopee sellers who regularly bump products\nStores that want to rotate a larger product list in a set order\nUsers who can keep their computer awake, browser open and Seller Centre signed in",
       "notice": "Requires desktop Chrome or Edge, extension installation and a computer that stays awake with the browser open. This is not an official Shopee service. Automated actions may lead to warnings or account restrictions; assess the risks and follow platform rules. Search rankings and sales are not guaranteed."
+    },
+    {
+      "name": "Taiwan Stock Opportunity Radar",
+      "text": "Explore seven research lists for TWSE- and TPEx-listed common stocks. Compare revenue, institutional flows, valuation, dividends and ownership, with industry, market and market-cap filters.",
+      "tags": "7 research lists,TWSE and TPEx,Post-market updates",
+      "price": "Free",
+      "button": "Free access",
+      "trial": {
+        "title": "Add us on LINE for free access",
+        "text": "Taiwan Stock Opportunity Radar is free to use. Message us on LINE for access details and instructions.",
+        "steps": "Add us on LINE\nSend “Free access — Taiwan Stock Opportunity Radar”\nReceive access details and instructions",
+        "button": "Get free access on LINE",
+        "note": "Taiwan Stock Opportunity Radar is free to use, with no three-day trial limit or automatic charges."
+      },
+      "detail": "Start your Taiwan stock research in one place. The radar organizes TWSE, TPEx, MOPS and TDCC data into seven research lists for listed common stocks. Filter by industry, market and market capitalization, then open a stock page to review revenue, institutional flows, financial metrics, price history and risk flags.",
+      "features": "Seven research lists | Explore revenue growth, institutional buying streaks, dividend stocks, low P/E, undervalued quality companies, quality pullbacks and ownership concentration\nTWSE and TPEx filters | Narrow your research by industry, market and minimum market capitalization\nRevenue and financial metrics | Review revenue growth, trailing EPS, ROE, P/E and dividend yield\nInstitutional flows and ownership | Review investment-trust and foreign-investor flows and major-holder changes; ownership lists need at least two weeks of accumulated data\nStock details and risk flags | See selection reasons, price history, dividends and flags for trading restrictions, margin financing and financial risks\nScheduled updates | While the service is running, updates start daily at 17:30 Taiwan time by default, including weekends; separate dates are shown for each data source",
+      "fit": "People building a Taiwan stock research list using consistent criteria\nResearchers comparing revenue, valuation and institutional flows across TWSE and TPEx companies\nPeople tracking dividends, ownership changes and stock-specific risk flags",
+      "notice": "Data is not real-time. Completeness and update times depend on the sources, and dates can differ across data types. Lists are research and screening tools, not investment advice, and do not guarantee returns.",
+      "link": "https://ccf-software.com/tw_stock/",
+      "direct_link": true
     }
   ],
   "trial": {
@@ -91,38 +121,118 @@
     "col_b": "CCF"
   },
   "compare": [
-    {"item": "Price", "a": "High quotes can be difficult for small businesses", "b": "Start with a scope that fits your budget"},
-    {"item": "First working version", "a": "Months of specifications and waiting", "b": "A usable version early in the process"},
-    {"item": "Changing requirements", "a": "Additional charges for each change", "b": "Iterative adjustments; minor changes included"},
-    {"item": "After delivery", "a": "Support may end with the warranty", "b": "Ongoing maintenance options"},
-    {"item": "Communication", "a": "Meetings, documents and multiple intermediaries", "b": "Talk directly to the developers on LINE"}
+    {
+      "item": "Price",
+      "a": "High quotes can be difficult for small businesses",
+      "b": "Start with a scope that fits your budget"
+    },
+    {
+      "item": "First working version",
+      "a": "Months of specifications and waiting",
+      "b": "A usable version early in the process"
+    },
+    {
+      "item": "Changing requirements",
+      "a": "Additional charges for each change",
+      "b": "Iterative adjustments; minor changes included"
+    },
+    {
+      "item": "After delivery",
+      "a": "Support may end with the warranty",
+      "b": "Ongoing maintenance options"
+    },
+    {
+      "item": "Communication",
+      "a": "Meetings, documents and multiple intermediaries",
+      "b": "Talk directly to the developers on LINE"
+    }
   ],
-  "why_head": {"title": "More than speed and price"},
+  "why_head": {
+    "title": "More than speed and price"
+  },
   "why": [
-    {"title": "Try before you pay", "text": "Try our products first. For custom projects, see a working version before deciding on the next stage."},
-    {"title": "Tools for the way you work", "text": "Choose from web tools for phones and computers or desktop browser extensions, according to each product's requirements."},
-    {"title": "Support for multilingual teams", "text": "Cloud Attendance Calendar supports Chinese, English, Vietnamese, Indonesian, Thai, Japanese and more, helping staff use a familiar language."},
-    {"title": "Built for Taiwan's workflows", "text": "Attendance, overtime calculations and report formats are designed around local business needs."},
-    {"title": "Separate business data", "text": "Cloud products separate company data and use HTTPS, backups, protected accounts and activity records."},
-    {"title": "Keep control of your data", "text": "Monthly subscriptions can be stopped and data exported to Excel. Source-code handover can be discussed for custom projects."},
-    {"title": "Continued updates", "text": "We keep improving products with new features and regulatory updates, without a separate upgrade fee."},
-    {"title": "Your brand", "text": "Custom projects can use your company name, logo and domain, so the system feels like your own."}
+    {
+      "title": "Try before you pay",
+      "text": "Try our products first. For custom projects, see a working version before deciding on the next stage."
+    },
+    {
+      "title": "Tools for the way you work",
+      "text": "Choose from web tools for phones and computers or desktop browser extensions, according to each product's requirements."
+    },
+    {
+      "title": "Support for multilingual teams",
+      "text": "Cloud Attendance Calendar supports Chinese, English, Vietnamese, Indonesian, Thai, Japanese and more, helping staff use a familiar language."
+    },
+    {
+      "title": "Built for Taiwan's workflows",
+      "text": "Attendance, overtime calculations and report formats are designed around local business needs."
+    },
+    {
+      "title": "Separate business data",
+      "text": "Cloud products separate company data and use HTTPS, backups, protected accounts and activity records."
+    },
+    {
+      "title": "Keep control of your data",
+      "text": "Monthly subscriptions can be stopped and data exported to Excel. Source-code handover can be discussed for custom projects."
+    },
+    {
+      "title": "Continued updates",
+      "text": "We keep improving products with new features and regulatory updates, without a separate upgrade fee."
+    },
+    {
+      "title": "Your brand",
+      "text": "Custom projects can use your company name, logo and domain, so the system feels like your own."
+    }
   ],
-  "steps_head": {"title": "Custom development in five steps"},
+  "steps_head": {
+    "title": "Custom development in five steps"
+  },
   "steps": [
-    {"title": "Discuss your needs", "text": "Tell us on LINE or by phone how you work and what gets in the way."},
-    {"title": "Get a clear quote", "text": "Agree on features, price and delivery time."},
-    {"title": "Try the first version", "text": "Use a working version and tell us what needs adjusting."},
-    {"title": "Refine and launch", "text": "Make it practical for daily use, then help your team get started."},
-    {"title": "Stay supported", "text": "Contact us directly for backups, updates and additional features."}
+    {
+      "title": "Discuss your needs",
+      "text": "Tell us on LINE or by phone how you work and what gets in the way."
+    },
+    {
+      "title": "Get a clear quote",
+      "text": "Agree on features, price and delivery time."
+    },
+    {
+      "title": "Try the first version",
+      "text": "Use a working version and tell us what needs adjusting."
+    },
+    {
+      "title": "Refine and launch",
+      "text": "Make it practical for daily use, then help your team get started."
+    },
+    {
+      "title": "Stay supported",
+      "text": "Contact us directly for backups, updates and additional features."
+    }
   ],
-  "faq_head": {"title": "Frequently asked questions"},
+  "faq_head": {
+    "title": "Frequently asked questions"
+  },
   "faq": [
-    {"q": "Does a lower price mean lower quality?", "a": "Savings come from our development process. AI handles repetitive coding tasks, while we focus on requirements, testing and quality checks before delivery."},
-    {"q": "How can you deliver quickly?", "a": "We reuse proven components from our existing products and use AI-assisted development to get a working version ready sooner."},
-    {"q": "Can I request changes after launch?", "a": "Ongoing adjustments are available through a maintenance plan. Contact us on LINE for minor changes; larger features are quoted for your approval first."},
-    {"q": "Where is the data stored?", "a": "Cloud products use servers with encrypted connections, separate company data and regular backups. Custom projects can also run on your own server or cloud account."},
-    {"q": "Can I try a product first?", "a": "Yes. Paid products offer a free trial, and US Stock Opportunity Radar is free to use. For custom projects, we can show a demonstration after the initial discussion."}
+    {
+      "q": "Does a lower price mean lower quality?",
+      "a": "Savings come from our development process. AI handles repetitive coding tasks, while we focus on requirements, testing and quality checks before delivery."
+    },
+    {
+      "q": "How can you deliver quickly?",
+      "a": "We reuse proven components from our existing products and use AI-assisted development to get a working version ready sooner."
+    },
+    {
+      "q": "Can I request changes after launch?",
+      "a": "Ongoing adjustments are available through a maintenance plan. Contact us on LINE for minor changes; larger features are quoted for your approval first."
+    },
+    {
+      "q": "Where is the data stored?",
+      "a": "Cloud products use servers with encrypted connections, separate company data and regular backups. Custom projects can also run on your own server or cloud account."
+    },
+    {
+      "q": "Can I try a product first?",
+      "a": "Yes. Paid products offer a free trial, and both stock radars are free to use. For custom projects, we can show a demonstration after the initial discussion."
+    }
   ],
   "contact": {
     "title": "Your idea. Let's build it.",

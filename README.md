@@ -23,11 +23,11 @@ python -m http.server 8088 --directory docs
 
 使用 VS Code Live Server 時，對 **`docs/index.html`** 按右鍵 → Open with Live Server。`site/templates/` 是建置用範本，不能直接當網站開啟。
 
-中文版維持原網址；英文版入口是 `docs/en/index.html`，正式網址為 `https://ccf-software.com/en/`。每頁導覽列的「中文／EN」可切換至同一頁的另一個語言版本，包含四個產品頁。兩版顯示相同的新台幣價格，英文不換算美元。修改文案或價格時，請同步更新兩份內容檔後重新建置。
+中文版維持原網址；英文版入口是 `docs/en/index.html`，正式網址為 `https://ccf-software.com/en/`。每頁導覽列的「中文／EN」可切換至同一頁的另一個語言版本，包含五個產品頁。兩版顯示相同的新台幣價格，英文不換算美元。修改文案或價格時，請同步更新兩份內容檔後重新建置。
 
 ## Google Analytics
 
-已在共用版型加入 GA4 `G-NL9WDQ47C9`，中英文共十個頁面都載入一次 Google tag。程式不額外將表單姓名、電話／LINE ID 或需求內容傳給 GA。部署更新後可在 GA 的即時報表確認瀏覽資料；本機檢查只驗證追蹤碼存在，不代表已驗證 GA 帳號收件。
+已在共用版型加入 GA4 `G-NL9WDQ47C9`，中英文共十二個頁面都載入一次 Google tag。程式不額外將表單姓名、電話／LINE ID 或需求內容傳給 GA。部署更新後可在 GA 的即時報表確認瀏覽資料；本機檢查只驗證追蹤碼存在，不代表已驗證 GA 帳號收件。
 
 ## GitHub Pages
 
