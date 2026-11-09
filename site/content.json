@@ -84,6 +84,7 @@
         "button": "加 LINE 免費使用",
         "note": "美股機會雷達免費使用，沒有三天試用期限，也不會自動扣款。"
       },
+      "catalog_hidden": true,
       "link": "https://ccf-software.com/us_stock/",
       "button": "免費使用",
       "image": "",
@@ -111,6 +112,7 @@
       "tags": "七種選股榜單,上市與上櫃,收盤後更新",
       "price": "免費",
       "free": true,
+      "catalog_hidden": true,
       "link": "https://ccf-software.com/tw_stock/",
       "button": "免費使用",
       "image": "",

@@ -21,6 +21,8 @@
   <p class="intro">{{ C.products_head.text }}</p>
   <div class="grid">
     {% for p in C.products %}
+    {% if p.get('catalog_hidden') %}<!-- Temporarily hidden product card
+    {% endif %}
     <article class="card">
       {% if p.image %}<img class="pimg" src="{{ p.image|img }}" alt="{{ p.name }}" loading="lazy">{% endif %}
       <h3><a class="plain" href="{{ p.href }}">{{ p.name }}</a></h3>
@@ -28,6 +30,7 @@
       {% if p.tag_list %}<div class="tags">{% for t in p.tag_list %}<span>{{ t }}</span>{% endfor %}</div>{% endif %}
       <div class="foot"><b>{{ p.price }}</b><a class="go" href="{{ p.href }}">{{ p.button or tr('了解更多', 'Learn more') }} →</a></div>
     </article>
+    {% if p.get('catalog_hidden') %}-->{% endif %}
     {% endfor %}
     <article class="card inv">
       <h3>{{ tr('更多產品陸續上架', 'More products on the way') }}</h3>

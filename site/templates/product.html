@@ -61,8 +61,11 @@
 <section class="sec white"><div class="wrap">
   <h2 style="margin-bottom:24px">{{ tr('其他產品', 'Other products') }}</h2>
   <div class="grid">{% for o in others %}
+    {% if o.get('catalog_hidden') %}<!-- Temporarily hidden product card
+    {% endif %}
     <article class="card"><h3><a class="plain" href="{{ o.href }}">{{ o.name }}</a></h3><p>{{ o.text }}</p>
       <div class="foot"><b>{{ o.price }}</b><a class="go" href="{{ o.href }}">{{ o.button or tr('了解更多', 'Learn more') }} →</a></div></article>
+    {% if o.get('catalog_hidden') %}-->{% endif %}
   {% endfor %}</div>
 </div></section>
 {% endif %}
