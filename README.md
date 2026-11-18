@@ -5,12 +5,12 @@
 - `docs/`：可直接發佈到 GitHub Pages 的完成檔案。
 - `site/content.json`：中文版文案、公司資訊、產品、FAQ。
 - `site/content.en.json`：英文版文案；未重複的共用設定由中文版繼承。兩種語言的產品與列表順序需保持一致。
-- `site/cases.json`、`site/cases.en.json`：中英文合作案例，包含工廠生產前管理、FB 廣告名單分派與留言私訊自動回覆、連鎖餐飲倉儲與 POS、賽鴿腳環影像比對四個案例。英文未重複的識別欄位由中文版繼承，案例與各功能列表需維持相同順序。
 - `site/templates/`：原本的公開頁面版型，改成靜態連結。
 - `site/assets/`：樣式、圖片、表單 JavaScript。
 - `site/config.json`：Formspree 表單接收網址與正式網站網址，**只放公開設定**。
 
-首頁的「合作案例」使用原生展開收合，無須額外 JavaScript；卡片保留完整介紹、功能、整合項目與效益，並提供聯絡入口。版型在 `site/templates/_cases.html`，專用樣式在 `site/assets/cases.css`。編輯案例後，重新建置並一起提交來源與 `docs/`。
+
+新增的四個方案已併入首頁產品區，詳情頁沿用產品版型；報價與交付方式依需求確認。台股與美股雷達仍維持隱藏。
 
 ## 本機預覽與更新
 
@@ -26,11 +26,11 @@ python -m http.server 8088 --directory docs
 
 使用 VS Code Live Server 時，對 **`docs/index.html`** 按右鍵 → Open with Live Server。`site/templates/` 是建置用範本，不能直接當網站開啟。
 
-中文版維持原網址；英文版入口是 `docs/en/index.html`，正式網址為 `https://ccf-software.com/en/`。每頁導覽列的「中文／EN」可切換至同一頁的另一個語言版本，包含五個產品頁。兩版顯示相同的新台幣價格，英文不換算美元。修改文案或價格時，請同步更新兩份內容檔後重新建置。
+中文版維持原網址；英文版入口是 `docs/en/index.html`，正式網址為 `https://ccf-software.com/en/`。每頁導覽列的「中文／EN」可切換至同一頁的另一個語言版本，包含九個產品頁。兩版顯示相同的新台幣價格，英文不換算美元。修改文案或價格時，請同步更新兩份內容檔後重新建置。
 
 ## Google Analytics
 
-已在共用版型加入 GA4 `G-NL9WDQ47C9`，中英文共十二個頁面都載入一次 Google tag。程式不額外將表單姓名、電話／LINE ID 或需求內容傳給 GA。部署更新後可在 GA 的即時報表確認瀏覽資料；本機檢查只驗證追蹤碼存在，不代表已驗證 GA 帳號收件。
+已在共用版型加入 GA4 `G-NL9WDQ47C9`，中英文共二十個頁面都載入一次 Google tag。程式不額外將表單姓名、電話／LINE ID 或需求內容傳給 GA。部署更新後可在 GA 的即時報表確認瀏覽資料；本機檢查只驗證追蹤碼存在，不代表已驗證 GA 帳號收件。
 
 ## GitHub Pages
 

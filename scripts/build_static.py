@@ -37,8 +37,6 @@ def translate_content(base, translated):
 def main():
     content = json.loads((SITE / "content.json").read_text(encoding="utf-8"))
     english = translate_content(content, json.loads((SITE / "content.en.json").read_text(encoding="utf-8")))
-    cases = json.loads((SITE / "cases.json").read_text(encoding="utf-8"))
-    cases_english = translate_content(cases, json.loads((SITE / "cases.en.json").read_text(encoding="utf-8")))
     config = json.loads((SITE / "config.json").read_text(encoding="utf-8"))
     endpoint = config.get("contactEndpoint", "").strip()
     if endpoint and not re.fullmatch(r"https://formspree\.io/f/[A-Za-z0-9]+", endpoint):
@@ -97,7 +95,7 @@ def main():
         s = c["settings"]
         s["line_href"] = safe_url(s.get("line_url"))
         og_image = site_url + "/assets/uploads/" + s["og_image"] if site_url and s.get("og_image") else ""
-        context = dict(C=c, S=s, s=s, LINE=s["line_href"], cases=cases_english if lang == "en" else cases,
+        context = dict(C=c, S=s, s=s, LINE=s["line_href"],
                        LINE_QR=asset("uploads/" + s["line_qr"]) if s.get("line_qr") else asset("line_qr.jpg"),
                        now_year=datetime.now(timezone(timedelta(hours=8))).year,
                        home=home, asset=asset, brand_logo=prefix + "image/ccf-logo_v2.png",
@@ -116,7 +114,8 @@ def main():
                 template = "redirect.html"
                 context["canonical"] = selected["ext"]
         destination.parent.mkdir(parents=True, exist_ok=True)
-        destination.write_text(env.get_template(template).render(**context) + "\n", encoding="utf-8")
+        rendered = env.get_template(template).render(**context)
+        destination.write_text("\n".join(line.rstrip() for line in rendered.splitlines()) + "\n", encoding="utf-8")
 
     render("index.html", OUT / "index.html", 0)
     for i in range(1, len(content["products"]) + 1):

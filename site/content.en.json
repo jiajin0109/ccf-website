@@ -31,7 +31,7 @@
   ],
   "products_head": {
     "title": "Practical tools, ready to use",
-    "text": "From cloud management and market research to desktop automation, choose the tool that fits your workflow. Contact us on LINE to ask about a free trial."
+    "text": "From cloud management and store operations to marketing automation, choose tools that fit your workflow. Ask about trials for ready-to-use products, or discuss scope and pricing for equipment integration and custom solutions."
   },
   "products": [
     {
@@ -103,6 +103,153 @@
       "notice": "Data is not real-time. Completeness and update times depend on the sources, and dates can differ across data types. Lists are research and screening tools, not investment advice, and do not guarantee returns.",
       "link": "https://ccf-software.com/tw_stock/",
       "direct_link": true
+    },
+    {
+      "name": "Factory Pre-production Management System",
+      "text": "Connect pre-production checklists, barcode scanning, motion stages and inkjet printing in one system, with preparation checks and production records.",
+      "tags": "Preparation checks,Equipment integration,Barcode scanning",
+      "price": "Quoted to scope",
+      "link": "",
+      "button": "Learn more",
+      "image": "",
+      "custom_solution": true,
+      "detail": "A chemical-materials factory needed to prepare multiple molds and checklists before production, alongside motion stages, inkjet printers and barcode scanners on the shop floor. We brought manual checks, equipment control and record keeping into one system.",
+      "features": "Preparation checklists｜Create pre-production checklists so operators can check molds, quantities and handling notes in order.\nBatch-change comparison｜Compare the current checklist with the previous batch and highlight additions, removals and changes to reduce repeated checking.\nBarcode lookup｜Retrieve product information by scanning a barcode, reducing manual searches and data-entry errors.\nProduction history｜Keep records of each production run so managers can trace issues and look up historical data.",
+      "fit": "Factories with preparation and verification workflows\nShop floors integrating motion stages, inkjet printers or barcode scanners\nManagers who need production records and issue tracing",
+      "solution_sections": [
+        {
+          "title": "Equipment and platform integration",
+          "items": [
+            "Control the motion stage and inkjet printer together and adjust their timing to keep product positioning consistent.",
+            "Determine product orientation and print content automatically to reduce errors from repeated manual typing.",
+            "Report equipment status on screen so supervisors can monitor startup, positioning and faults."
+          ]
+        },
+        {
+          "title": "Benefits",
+          "items": [
+            "Reduce time spent explaining preparation checklists and repeating the same instructions.",
+            "Reduce manual entry and transcription errors, including incorrect print content and missed steps.",
+            "Support retries and recovery when equipment faults occur, helping operators resolve issues more efficiently."
+          ]
+        }
+      ],
+      "trial": {
+        "title": "Discuss your needs on LINE",
+        "text": "Tell us about your workflow, existing equipment and required integrations. We will confirm scope, pricing and delivery arrangements.",
+        "steps": "Add us on LINE\nTell us which product you need\nConfirm scope, pricing and delivery",
+        "button": "Discuss on LINE",
+        "note": "Pricing, equipment integration, delivery and maintenance are agreed after confirming your requirements."
+      }
+    },
+    {
+      "name": "Facebook Lead Assignment and Automated Comment and Message Replies",
+      "text": "Automate Facebook comment and Messenger replies, collect Facebook and Instagram ad leads, assign sales staff and send LINE notifications for follow-up.",
+      "tags": "Facebook comment replies,Messenger automation,Lead assignment",
+      "price": "Quoted to scope",
+      "link": "",
+      "button": "Learn more",
+      "image": "",
+      "custom_solution": true,
+      "detail": "Manage Facebook Page comments, Messenger conversations and Facebook or Instagram ad forms in one place. When customers post a configured keyword or send a message, the system can reply according to your rules or use private messages to guide them through sharing their contact details. New leads are checked for duplicates, assigned to sales staff in rotation and announced through LINE notifications. Managers can see who owns each lead and how follow-up is progressing, with records also synchronized to Google Sheets. This reduces manual replies, copying and pasting, and missed inquiries.",
+      "features": "Facebook comment replies｜Reply to Facebook Page-post comments according to configured rules and use specified keywords to guide follow-up interactions.\nMessenger conversations｜Support automated Messenger replies and conversation flows, including private messages after comments and prompts for contact details.\nFacebook and Instagram ad forms｜Collect Facebook or Instagram ad-form submissions automatically and record their Page, form and advertising campaign.\nDuplicate checks and assignment｜Detect duplicate entries, exclude leads that should not be contacted and distribute the remaining leads to sales staff in rotation.\nCentral administration｜Manage advertising campaigns, sales staff, lead sources, LINE notifications and Google Sheets synchronization in one place.\nProgress and notifications｜Check follow-up progress and notification records, with records and resend options to help resolve notification or synchronization issues.\nMultiple Pages and campaigns｜Manage several Pages, forms and campaigns together so customer records from different sources stay in one place.\nFlexible integrations｜Add LINE automated replies, email notifications, website forms or other system connections as the team needs them.",
+      "fit": "Teams collecting customer leads through Facebook and Instagram ads\nBusinesses automating Page comments and Messenger replies\nManagers assigning leads and tracking sales follow-up",
+      "solution_sections": [
+        {
+          "title": "Equipment and platform integration",
+          "items": [
+            "Connect Facebook and Instagram ad forms to receive customer details automatically.",
+            "Connect Page comments and Messenger private messages for rule-based replies.",
+            "Send individual or group LINE notifications to alert sales staff about new leads.",
+            "Synchronize customer leads to Google Sheets for shared access and reporting.",
+            "Connect existing customer-management or business-management systems as needed."
+          ]
+        },
+        {
+          "title": "Benefits",
+          "items": [
+            "Assign new leads and notify sales staff without waiting for someone to forward them manually.",
+            "Use rule-based replies to help respond to customer comments and private messages.",
+            "Reduce downloading, copying and pasting, as well as missed leads and scattered records.",
+            "Keep lead, notification and synchronization records so problems are easier to trace.",
+            "Give managers a view of ownership and progress, while helping sales staff see whom to contact next.",
+            "Start with lead collection and assignment, then add functions as the team needs them."
+          ]
+        }
+      ],
+      "trial": {
+        "title": "Discuss your needs on LINE",
+        "text": "Tell us about your workflow, existing equipment and required integrations. We will confirm scope, pricing and delivery arrangements.",
+        "steps": "Add us on LINE\nTell us which product you need\nConfirm scope, pricing and delivery",
+        "button": "Discuss on LINE",
+        "note": "Pricing, equipment integration, delivery and maintenance are agreed after confirming your requirements."
+      }
+    },
+    {
+      "name": "Central Warehouse and POS Integration for a Restaurant Chain",
+      "text": "Connect store replenishment, central consolidation, dispatch, receiving and inventory, with POS, loyalty and reporting planned around your needs.",
+      "tags": "Central warehouse,Store replenishment,POS integration",
+      "price": "Quoted to scope",
+      "link": "",
+      "button": "Learn more",
+      "image": "",
+      "custom_solution": true,
+      "detail": "We helped a grilled-food restaurant chain plan an integrated headquarters platform. The project replaces handwritten store replenishment orders, photos sent through LINE and manual consolidation with online requests, central aggregation, dispatch, receiving and inventory records. The scope also plans a store POS interface, receipt-printer and cash-drawer integration, loyalty points, attendance scheduling and an owner dashboard, giving headquarters a central view of stores and a repeatable foundation for expansion.",
+      "features": "Roles and permissions｜Define accounts and role permissions for owners, headquarters, warehouse staff, store managers and employees.\nOnline replenishment｜Let stores submit replenishment orders online instead of sending photos of handwritten orders through LINE, reducing omissions, misreading and manual consolidation.\nCentral demand consolidation｜Aggregate store demand centrally by store and item to support preparation and dispatch.\nDispatch, receiving and stock｜Record central dispatch, store receipt confirmation and discrepancy reports, with a history of shipments, receipts and stock movements.\nStore POS planning｜Plan a store POS interface for product selection, orders, additions, checkout, daily closing, printing and cash-drawer control.\nLocal-first synchronization｜Use a local-first POS design with SQLite storing orders and transactions during service and synchronizing to headquarters in the background.\nOperations extensions｜Reserve extension modules for POS sales synchronization, loyalty points, coupons, attendance scheduling, opening and closing checklists, and store task assignments.\nOwner dashboard｜Provide an owner dashboard and reports covering replenishment, dispatch, receiving, stock, waste, sales and membership data.",
+      "fit": "Restaurant brands with multiple stores and central preparation\nTeams systematizing replenishment, dispatch and receiving\nBusinesses planning staged POS, loyalty and operations integration",
+      "solution_sections": [
+        {
+          "title": "Equipment and platform integration",
+          "items": [
+            "The store POS client can be built with Electron and Node.js for local device control and offline storage.",
+            "Recommend thermal printers supporting ESC/POS commands for kitchen tickets, counter tickets and customer receipts.",
+            "Trigger electronic cash drawers through the thermal printer's drawer port and record the time, operator and reason for opening.",
+            "Synchronize products, orders, replenishment requests, receiving and daily closing between the cloud headquarters backend and store POS clients through REST APIs.",
+            "Integrate LINE Login, LIFF or LINE Messaging API as entry points for loyalty, attendance, notifications and marketing.",
+            "Evaluate vendor APIs, read-only database access, automated exports or a custom POS according to the capabilities offered by the POS provider."
+          ]
+        },
+        {
+          "title": "Benefits",
+          "items": [
+            "Systematize store replenishment to reduce handwriting, photos, missed LINE messages and manual consolidation.",
+            "Give the central warehouse visibility into store demand and improve preparation, dispatch and receiving follow-up.",
+            "Keep stock-movement records to trace issues and analyze shortages and waste.",
+            "Once POS and backend data are integrated, sales records can support reports, loyalty points, replenishment suggestions and operations decisions.",
+            "Support repeat visits and brand engagement through LINE loyalty points, coupons and messaging.",
+            "Reduce communication work for store managers and headquarters through attendance scheduling, opening and closing checklists, and store task assignments.",
+            "Adopt replenishment and warehouse workflows first, then extend the modular platform with POS, loyalty, attendance and replenishment planning."
+          ]
+        }
+      ],
+      "trial": {
+        "title": "Discuss your needs on LINE",
+        "text": "Tell us about your workflow, existing equipment and required integrations. We will confirm scope, pricing and delivery arrangements.",
+        "steps": "Add us on LINE\nTell us which product you need\nConfirm scope, pricing and delivery",
+        "button": "Discuss on LINE",
+        "note": "Pricing, equipment integration, delivery and maintenance are agreed after confirming your requirements."
+      }
+    },
+    {
+      "name": "Racing Pigeon Leg-band Image Comparison System",
+      "text": "Photograph, register and compare racing-pigeon leg-band images, with quick record lookup and comparison history to support identity checks.",
+      "tags": "Image comparison,Leg-band registration,Traceable records",
+      "price": "Quoted to scope",
+      "link": "",
+      "button": "Learn more",
+      "image": "",
+      "custom_solution": true,
+      "detail": "The customer needed an identity-checking tool to help detect replacement of leg bands or racing pigeons during competition. The system supports photography, registration, comparison and lookup, making the management process traceable.",
+      "features": "Leg-band image records｜Build a leg-band image database and keep records of each registration and comparison.\nQuick record lookup｜Help staff look up leg-band records quickly and reduce time spent searching manually.\nIdentity comparison support｜Reduce inconsistencies in manual interpretation and support fair, reliable competition management.",
+      "fit": "Organizations managing racing-pigeon leg-band images and registrations\nStaff who need faster image lookup and comparison\nTeams keeping identity-checking and competition records",
+      "solution_sections": [],
+      "trial": {
+        "title": "Discuss your needs on LINE",
+        "text": "Tell us about your workflow, existing equipment and required integrations. We will confirm scope, pricing and delivery arrangements.",
+        "steps": "Add us on LINE\nTell us which product you need\nConfirm scope, pricing and delivery",
+        "button": "Discuss on LINE",
+        "note": "Pricing, equipment integration, delivery and maintenance are agreed after confirming your requirements."
+      }
     }
   ],
   "trial": {

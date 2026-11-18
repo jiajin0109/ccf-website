@@ -55,9 +55,7 @@
   </table></div>
 </div></section>
 
-{% include '_cases.html' %}
-
-<section id="why" class="sec white"><div class="wrap">
+<section id="why" class="sec"><div class="wrap">
   <p class="kicker latin">{{ C.why_head.kicker }}</p>
   <h2 style="margin-bottom:40px">{{ C.why_head.title }}</h2>
   <div class="grid">{% for w in C.why %}<div class="why"><h3>{{ w.title }}</h3><p>{{ w.text }}</p></div>{% endfor %}</div>
