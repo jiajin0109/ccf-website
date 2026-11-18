@@ -30,6 +30,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ asset('site.css') }}?v=2">
 <link rel="stylesheet" href="{{ asset('languages.css') }}?v=1">
+<link rel="stylesheet" href="{{ asset('cases.css') }}?v=1">
 <style>:root{--accent:{{ s.accent }}}</style>
 <script defer src="{{ asset('config.js') }}"></script>
 <link rel="stylesheet" href="{{ asset('contact.css') }}?v=1">
@@ -40,7 +41,7 @@
   <a class="brand" href="{{ home }}#top"><img src="{{ brand_logo }}?v=3" alt="" width="86" height="32"><span>{{ s.company }}</span></a>
   <nav class="nav" aria-label="{{ tr('主選單', 'Main navigation') }}">
     <a href="{{ home }}#products" class="hide-m">{{ tr('現成產品', 'Products') }}</a><a href="{{ home }}#custom" class="hide-m">{{ tr('客製開發', 'Custom development') }}</a><a href="{{ home }}#why" class="hide-m">{{ tr('為什麼選我們', 'Why CCF') }}</a>
-    <a href="{{ home }}#process" class="hide-m">{{ tr('合作流程', 'Our process') }}</a><a href="{{ home }}#faq" class="hide-m">{{ tr('常見問題', 'FAQ') }}</a>
+    <a href="{{ home }}#cases" class="hide-m">{{ tr('合作案例', 'Projects') }}</a><a href="{{ home }}#process" class="hide-m">{{ tr('合作流程', 'Our process') }}</a><a href="{{ home }}#faq" class="hide-m">{{ tr('常見問題', 'FAQ') }}</a>
     <div class="language-switch" role="group" aria-label="{{ tr('語言切換', 'Select language') }}">
       <a href="{{ zh_href }}" lang="zh-Hant" hreflang="zh-Hant"{% if lang == 'zh-Hant' %} aria-current="page"{% endif %}>中文</a>
       <a href="{{ en_href }}" lang="en" hreflang="en"{% if lang == 'en' %} aria-current="page"{% endif %}>EN</a>

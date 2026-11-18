@@ -5,9 +5,12 @@
 - `docs/`：可直接發佈到 GitHub Pages 的完成檔案。
 - `site/content.json`：中文版文案、公司資訊、產品、FAQ。
 - `site/content.en.json`：英文版文案；未重複的共用設定由中文版繼承。兩種語言的產品與列表順序需保持一致。
+- `site/cases.json`、`site/cases.en.json`：中英文合作案例，包含工廠生產前管理、FB 廣告名單分派與留言私訊自動回覆、連鎖餐飲倉儲與 POS、賽鴿腳環影像比對四個案例。英文未重複的識別欄位由中文版繼承，案例與各功能列表需維持相同順序。
 - `site/templates/`：原本的公開頁面版型，改成靜態連結。
 - `site/assets/`：樣式、圖片、表單 JavaScript。
 - `site/config.json`：Formspree 表單接收網址與正式網站網址，**只放公開設定**。
+
+首頁的「合作案例」使用原生展開收合，無須額外 JavaScript；卡片保留完整介紹、功能、整合項目與效益，並提供聯絡入口。版型在 `site/templates/_cases.html`，專用樣式在 `site/assets/cases.css`。編輯案例後，重新建置並一起提交來源與 `docs/`。
 
 ## 本機預覽與更新
 

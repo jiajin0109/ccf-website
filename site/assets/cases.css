@@ -1,0 +1,30 @@
+.case-studies { scroll-margin-top: 110px; }
+.cases-heading { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px 48px; margin-bottom: 36px; }
+.cases-heading .intro { flex: 0 1 540px; margin: 0 0 4px; }
+.cases-heading h2 { margin-bottom: 0; }
+.cases-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: start; }
+.case-card { min-width: 0; background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 30px; scroll-margin-top: 120px; }
+.case-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; color: var(--muted); font-size: 13px; margin-bottom: 20px; }
+.case-number { font-size: 28px; line-height: 1; font-weight: 700; color: var(--hl); }
+.case-meta > span:last-child { border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; }
+.case-card h3 { font-size: 23px; line-height: 1.5; font-weight: 900; margin: 0 0 10px; overflow-wrap: anywhere; }
+.case-subtitle { color: var(--hl); font-size: 14px; line-height: 1.8; margin: 0 0 18px; }
+.case-description { font-size: 15px; line-height: 1.9; color: var(--muted); margin: 0 0 24px; }
+.case-details { border-top: 1px solid var(--line); }
+.case-details > summary { list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-top: 18px; font-size: 15px; font-weight: 700; cursor: pointer; }
+.case-details > summary::-webkit-details-marker { display: none; }
+.case-details > summary > span { color: var(--hl); font-size: 22px; line-height: 1; transition: transform .15s; }
+.case-details[open] > summary > span { transform: rotate(45deg); }
+.case-details > summary:focus-visible, .case-contact:focus-visible { outline: 2px solid var(--hl); outline-offset: 5px; border-radius: 4px; }
+.case-detail-content { padding-top: 24px; }
+.case-detail-block + .case-detail-block { margin-top: 24px; }
+.case-detail-block h4 { font-size: 15px; margin: 0 0 10px; }
+.case-detail-block ul { margin: 0; padding-left: 20px; display: grid; gap: 10px; font-size: 14px; line-height: 1.85; color: var(--muted); }
+.case-contact { display: inline-block; margin-top: 26px; color: var(--hl); font-weight: 700; font-size: 14px; }
+@media (max-width: 760px) {
+  .cases-grid { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .case-card { padding: 24px; }
+  .case-card h3 { font-size: 21px; }
+  .cases-heading { margin-bottom: 28px; }
+}
+@media (prefers-reduced-motion: reduce) { .case-details > summary > span { transition: none; } }
